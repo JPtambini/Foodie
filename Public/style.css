@@ -1,0 +1,44 @@
+#content{
+	width:75%;
+	height:80%;
+	background-color: indigo;
+	display:inline-block;
+	float:right;
+}
+#following{
+	width:100%;
+	height:30%;
+	background-color: orange;
+}
+#footer{
+	width:100%;
+	height:10%;
+	background-color: steelblue;
+	clear:both;
+}
+#header{
+	width:100%;
+	height:10%;
+	background-color: blue;
+}
+#profile_picture{
+	width:100%;
+	height:20%;
+	background-color: green;
+}
+#sidebar{
+	width:25%;
+	height:80%;
+	background-color: red;
+	display:inline-block;
+	float:left;
+}
+#user_info{
+	width: 100%;
+	height: 20%;
+	background-color: yellow;
+}
+#wrapper{
+	width:100%;
+	height:1000px;
+}
