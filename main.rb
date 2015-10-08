@@ -1,5 +1,9 @@
 require 'sinatra'
 
- get '/' do 
+enable :sessions
+ 
+get '/' do 
  	erb:layout
- end
+end
+
+ 
