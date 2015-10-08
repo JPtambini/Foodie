@@ -1,4 +1,8 @@
 require 'sinatra'
+require 'sinatra/activerecord'
+
+
+set :database, "sqlite3:foodie_base.sqlite3"
  get '/' do 
  	erb :layout
  end

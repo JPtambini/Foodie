@@ -121,6 +121,7 @@ footer{
     position:fixed;
     border-radius:5px;
     opacity:0;
+    z-index: 3;
 }
 #navbar li{
     margin-top:10%;
