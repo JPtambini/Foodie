@@ -15,3 +15,4 @@ require 'sinatra'
  	erb :signup
  end
 
+enable :sessions
