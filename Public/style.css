@@ -1,8 +1,13 @@
 #content{
 	width:75%;
-	height:80%;
+	height:90%;
 	display:inline-block;
 	float:right;
+    opacity:0;
+}
+#footer_p p{
+    margin:0px;
+    padding:0px;
 }
 #logo{
     margin:0px;
@@ -20,20 +25,72 @@
 #following{
 	width:100%;
 	height:30%;
-	background-color: orange;
 }
-#footer{
-	width:100%;
-	height:10%;
-	background-color: #282828;
-	clear:both;
+#following_images img{
+	width:25%;
+	height:25%;
+}
+#following_images{
+	width:84%;
+    padding-left:50px;
+    background-color:grey;
+}
+.following_images_padding{
+	margin-top: 4px;
+	margin-left: 2px;
+	margin-right: 2px;
+    border-radius: 65px;
 }
 .field{
     color:grey
 }
+footer{
+	width:100%;
+	height:10%;
+	background-color: grey;
+	clear:both;
+}
+#footer_about{
+	display: inline-block;
+	width:30%;
+	height:50%;
+    float:left;
+}
+#footer_about ul{
+}
+
+#footer_about li{
+    padding-top:50px;
+    list-style:none;
+    display:inline;
+    margin-left:1%;
+    color:white;
+}
+#footer_about a{
+    color:white;
+    text-decoration:none;
+}
+#footer_p{
+	display:inline-block;
+	width:34%;
+	height:100%;
+	float:right;
+}
+#footer_p p{
+    margin:0px;
+    padding:0px;
+    font-size:10px;
+    text-align:right;
+    opacity:0.7;
+}
+
+#footer_about a{
+	text-decoration: none;
+	color: black;
+}
 #header{
 	width:100%;
-	height:4%;
+	height:45px;
 	background-color: white;
     border-bottom:1px grey solid;
 }
@@ -70,18 +127,21 @@
     font-size:1.2em;
 
 }
-
 #nav_icon{
     position:fixed;
     margin-left:70%;
     z-index:2;
     opacity:.5;
 }
-
 #profile_picture{
 	width:100%;
 	height:20%;
-	background-color: green;
+}
+#profile_picture img{i
+	display:block;
+	border:solid black;
+    margin-left:22%;
+    margin-top:5%;
 }
 #right_head{
     width:20%;
@@ -96,24 +156,53 @@
     margin-left:10%;
 }
 #right_head a{
-    color:black;  
+   color:black; 
 }
 #right_head a:hover{
     color:grey;
 }
+#social_list {
+	height:50%;
+	width: 30%;
+    display:inline-block;
+}
+#social_list li {
+    list-style:none;
+    display:inline;
+    margin-left:10%;
+    color:black;
+}
+#socail_list a{
+    color:black;
+}
 #sidebar{
 	width:25%;
-	height:80%;
+	height:90%;
 	background-color:#E8E8E8;
     opacity:.6;
 	display:inline-block;
 	float:left;
 }
+
 #user_info{
 	width: 100%;
 	height: 20%;
-	background-color: yellow;
     opacity:.5;
+}
+#user_info_list{
+	width:50%;
+	text-align: left;
+	/*margin-left: auto;*/
+	margin-right: auto;
+	text-align: right;
+	line-height: 2;
+}
+#user_info_list ul{
+	margin-top: 0;
+	padding-top: 15;
+}
+#user_info_list li{
+	list-style: none;
 }
 #wrapper{
 	width:100%;

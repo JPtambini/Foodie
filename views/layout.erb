@@ -7,12 +7,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </head>
 <body>
-<div id="wrapper">
-
-	<header id="header">
-        <div id=left_head>
-            <p id="logo">Foodie</p>
-        </div>
+    <div id="wrapper">
+        
+	    <header id="header">
+            <div id=left_head>
+                <p id="logo">Foodie</p>
+            </div>
             <div id="center_head">
                 <form id="log_in" method="POST" action="/contact_us">
                     <input class="field" type="text" name="first_name" value="username">
@@ -28,34 +28,70 @@
                 <li><a href="https://www.pinterest.com"><i class="fa fa-pinterest-p fa-lg"></i></a></li
             </ul>
         </div>
-	</header>
-    <div id="sidebar">
-    	<div id="profile_picture">
-	    </div>
+        </header>
+       
+        <div id="sidebar">
+             <div id="profile_picture">
+		        <img src="/image/stock_profile.jpg">	
+	        </div>
 	    <div id="user_info">
-        </div>
+		    <div id="user_info_list">
+			    <ul>
+				    <li>Username :</li>
+				    <li>Name :</li>
+    				<li>Location :</li>
+	    		</ul>
+	    	</div>
+	    </div>
 	    <div id="following">
+		    <div id="following_images">
+			    <img class="following_images_padding" src="/image/stock_profile.jpg">
+			    <img class="following_images_padding" src="/image/stock_profile.jpg">
+			    <img class="following_images_padding" src="/image/stock_profile.jpg">
+			    <img class="following_images_padding" src="/image/stock_profile.jpg">
+			    <img class="following_images_padding" src="/image/stock_profile.jpg">
+			    <img class="following_images_padding" src="/image/stock_profile.jpg">
+                <img class="following_images_padding" src="/image/stock_profile.jpg">
+			    <img class="following_images_padding" src="/image/stock_profile.jpg">
+			    <img class="following_images_padding" src="/image/stock_profile.jpg">
+	    	</div>
         </div>
     </div>
-    <div id="content">
-        <div id=nav_icon>
-            <i id="icon" class="fa fa-chevron-circle-down fa-2x"></i>
+        <div id="content">
+            <div id=nav_icon>
+                <i id="icon" class="fa fa-chevron-circle-down fa-2x"></i>
+            </div>
+            <div id="navbar">
+			    <ul>
+                    <li><div class="menu">Profile</div></li>
+                    <li><div class="menu">Feed</div></li>
+				    <li><div class="menu">Account Info</div></li>
+				    <li><div class="menu">Post</li>
+                </ul>
+            </div>
+    </div>
+
+    <footer>
+	    <div id="footer_about">
+		    <ul>
+			    <li><a href="#">About</a></li> |
+			    <li><a href="#">FAQ</a></li> |
+			    <li><a href="#">Contact Us</a></li>
+            </ul> 
         </div>
-        <div id="navbar">
-			<ul>
-                <li><div class="menu">Profile</div></li>
-                <li><div class="menu">Feed</div></li>
-				<li><div class="menu">Account Info</div></li>
-				<li><div class="menu">Post</li>
-            </ul>
-		</div>
-</div>
-<div id="footer">
-</div>
-
-
-
-</div>
+        <div id="social_list"> 
+                <ul>
+                    <li><a href="https://www.facebook.com"><i class="fa fa-facebook-square fa-lg"></i></a></li>
+                    <li><a href="https://www.twitter.com"><i class="fa fa-twitter-square fa-lg"></i></a></li>
+                    <li><a href="https://www.instagram.com"><i class="fa fa-instagram fa-lg"></i></a></li>
+                    <li><a href="https://www.pinterest.com"><i class="fa fa-pinterest-p fa-lg"></i></a></li
+                </ul>
+        </div>
+	    <div id="footer_p">
+            <p> Copyright &copy; 2015  Victor Tsay & John Paul Tambini. New york </p>
+	    </div>
+    </footer>
+    
     <script> 
     $(document).ready(function(){
          var turn=0
@@ -68,6 +104,7 @@
                     turn=0
             }
             });
-        });                                                                                                                                                                          </script>
+            });                                                                                                                                          
+        </script>
 </body>
 </html>
