@@ -14,11 +14,18 @@
                 <p id="logo">Foodie</p>
             </div>
             <div id="center_head">
-                <form id="log_in" method="POST" action="/contact_us">
-                    <input class="field" type="text" name="first_name" value="username">
-                    <input class="field" type="text" name="first_name" value="password">
-                    <input class="bottom" type="submit" value="log in">
-                </form>
+                <% if session[:username] %>
+                    <h5>"Welcome back <%= "#{ session[:username] }" %>"</h5>
+                    <form id="log_out" method="POST" action="/log_out">
+                          <input class="bottom" type="submit" value="log out"> 
+                    </form>
+                <% else %>
+                    <form id="log_in" method="POST" action="/log_in">
+                        <input class="field" type="text" name="username" value="username">
+                        <input class="field" type="text" name="password" value="password">
+                        <input class="bottom" type="submit" value="log in">
+                    </form>
+                <% end %>
             </div>
         <div id=right_head>
             <ul>
