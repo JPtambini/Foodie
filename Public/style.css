@@ -283,7 +283,7 @@ textarea{
 	resize:none;
 	margin-left: 52px;
 	}
-input{
+#form_input input{
 	margin-left: 52px;
 }
 #post_form{
@@ -396,5 +396,9 @@ form{
 }
 .bottom{
     height:10%;
+}
+#del_acct{
+    background-color: red;
+    font-weight: bold;
 }
 
