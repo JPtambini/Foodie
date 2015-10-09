@@ -15,7 +15,7 @@ set :database, "sqlite3:foodie_base.sqlite3"
  get '/post' do
  	erb :post
  end
- get 'signup' do
+ get '/signup' do
  	erb :signup
  end
 

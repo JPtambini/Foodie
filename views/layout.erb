@@ -4,6 +4,7 @@
 	<link rel="stylesheet" type="text/css" href="/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Quicksand:400,300' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="jquery.blockUI.js"></script> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </head>
 <body>
@@ -36,9 +37,9 @@
 	    <div id="user_info">
 		    <div id="user_info_list">
 			    <ul>
-				    <li>Username :</li>
-				    <li>Name :</li>
-    				<li>Location :</li>
+				    <li>  Username :</li>
+				    <li>  Name :</li>
+                    <li><i class="fa fa-thumb-tack"></i>  Location :</li>
 	    		</ul>
 	    	</div>
 	    </div>
@@ -63,10 +64,10 @@
             </div>
             <div id="navbar">
 			    <ul>
-                    <li><div class="menu">Profile</div></li>
-                    <li><div class="menu">Feed</div></li>
-				    <li><div class="menu">Account Info</div></li>
-				    <li><div class="menu">Post</li>
+                    <li><div class="menu"><a href="/signup">Profile</a></div></li>
+                    <li><div class="menu"><a href="/feed">Feed</a></div></li>
+                    <li><div class="menu"><a href="/edit">Account Info</a></div></li>
+                    <li><div class="menu"><a href="/post">Post</a></div></li>
                 </ul>
             </div>
             <%= yield %>
@@ -88,23 +89,22 @@
                 </ul>
         </div>
 	    <div id="footer_p">
-            <p> Copyright &copy; 2015  Victor Tsay & John Paul Tambini. New york </p>
+            <p> Copyright &copy; 2015 Victor Tsay & John Paul Tambini. All rights reserved </p>
 	    </div>
     </footer>
     
     <script> 
-    $(document).ready(function(){
-         var turn=0
-        $("#icon").click(function(){
-            if (turn==0){
-                $("#navbar").animate({height: '300px', opacity: '.7'}, "slow");
-                    turn=1
-            }else{
-                $("#navbar").animate({height: '0', opacity: '0'}, "slow");
-                    turn=0
-            }
+        $(document).ready(function(){
+             var turn=0
+            $("#icon").click(function(){
+                if (turn==0){
+                    $("#navbar").animate({height: '300px', opacity: '.6'}, "slow");
+                        turn=1
+                }else{
+                    $("#navbar").animate({height: '0', opacity: '0'}, "slow");
+                        turn=0
+                }
             });
-            });                                                                                                                                          
-        </script>
+        });                                                                                                                                          </script>
 </body>
 </html>
