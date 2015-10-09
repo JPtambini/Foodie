@@ -1,6 +1,6 @@
 require 'sinatra'
 require 'sinatra/activerecord'
-
+require './models'
 
 set :database, "sqlite3:foodie_base.sqlite3"
  get '/' do 
