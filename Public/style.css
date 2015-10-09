@@ -79,10 +79,12 @@ footer{
 }
 #footer_p p{
     margin:0px;
+    margin-right:3%;
     padding:0px;
     font-size:10px;
     text-align:right;
     opacity:0.7;
+    
 }
 
 #footer_about a{
@@ -115,13 +117,20 @@ footer{
 #navbar{
     width:17%;
     height:0px;
-    background-color:#F8F8F8;
+    background-color:#F2F2F2;
     margin-top:1%;
     margin-left:57%;
     position:fixed;
     border-radius:5px;
     opacity:0;
     z-index: 3;
+}
+#navbar a{
+    text-decoration:none;
+    color:black;
+}
+#navbar a:hover{
+    font-size:1.1em;
 }
 #navbar li{
     margin-top:10%;
@@ -293,3 +302,99 @@ form{
 	margin-left: auto;
 	margin-right: auto;
 }
+
+/*************************END OF FEED.ERB CSS*************************/
+
+
+
+/******Sing up***************/
+
+#sign_form{
+    width:50%;
+    float:left;
+    display:inline-block;
+}
+#sign_up{
+    width:100%;
+    height:100%;
+    background-color:#FAFAFA;
+}
+#sign_left{
+    width:25%;
+    height:100%;
+    float:left;
+    display:inline-block;
+}
+#sign_right{
+    width:25%;
+    height:100%;
+    float:left;
+    display:inline-block;
+}
+.sign_field{
+    width:100%;
+    height:3%;
+    color:grey;
+}
+#sign_up_bottom{
+    display:inline-block;
+    float:right;
+}
+#rest_bottom{
+    display:inline-block;
+    float: right;
+}
+.bottom{
+    height:10%;
+}
+
+
+
+
+/******************sig up **************/
+
+
+/********EDIT*********************/
+
+#edit_form{
+    width:50%;
+    float:left;
+    display:inline-block;
+}
+#edit{
+    width:100%;
+    height:100%;
+    background-color:#FAFAFA;
+}
+#edit_left{
+    width:25%;
+    height:100%;
+    float:left;
+    display:inline-block;
+}
+#edit_left h3{
+    padding-left:10px;
+}
+#edit_right{
+    width:25%;
+    height:100%;
+    float:left;
+    display:inline-block;
+}
+.edit_field{
+    width:100%;
+    height:3%;
+    color:grey;
+}
+#confirm_bottom{
+    display:inline-block;
+    float:right;
+}
+#edit_reset_bottom{
+    display:inline-block;
+    float: right;
+}
+.bottom{
+    height:10%;
+}
+
