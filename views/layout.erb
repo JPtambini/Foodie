@@ -14,71 +14,85 @@
                 <p id="logo">Foodie</p>
             </div>
             <div id="center_head">
-                <% if session[:username] %>
+                <% if session[:id]%>
                     <h5>"Welcome back <%= "#{ session[:username] }" %>"</h5>
                     <form id="log_out" method="POST" action="/log_out">
                           <input class="bottom" type="submit" value="log out"> 
                     </form>
                 <% else %>
                     <form id="log_in" method="POST" action="/log_in">
-                        <input class="field" type="text" name="username" value="username">
-                        <input class="field" type="text" name="password" value="password">
+                        <input class="field" type="text" name="username" placeholder="username">
+                        <input class="field" type="text" name="password" placeholder="password">
                         <input class="bottom" type="submit" value="log in">
                     </form>
                 <% end %>
             </div>
-        <div id=right_head>
-            <ul>
-                <li><a href="https://www.facebook.com"><i class="fa fa-facebook-square fa-lg"></i></a></li>
-                <li><a href="https://www.twitter.com"><i class="fa fa-twitter-square fa-lg"></i></a></li>
-                <li><a href="https://www.instagram.com"><i class="fa fa-instagram fa-lg"></i></a></li>
-                <li><a href="https://www.pinterest.com"><i class="fa fa-pinterest-p fa-lg"></i></a></li
-            </ul>
-        </div>
+            <div id=right_head>
+                <ul>
+                    <li><a href="https://www.facebook.com"><i class="fa fa-facebook-square fa-lg"></i></a></li>
+                    <li><a href="https://www.twitter.com"><i class="fa fa-twitter-square fa-lg"></i></a></li>
+                    <li><a href="https://www.instagram.com"><i class="fa fa-instagram fa-lg"></i></a></li>
+                    <li><a href="https://www.pinterest.com"><i class="fa fa-pinterest-p fa-lg"></i></a></li
+                </ul>
+            </div>
         </header>
        
         <div id="sidebar">
              <div id="profile_picture">
 		        <img src="/image/stock_profile.jpg">	
 	        </div>
-	    <div id="user_info">
-		    <div id="user_info_list">
-			    <ul>
-				    <li>  Username :</li>
-				    <li>  Name :</li>
-                    <li><i class="fa fa-thumb-tack"></i>  Location :</li>
-	    		</ul>
-	    	</div>
-	    </div>
-	    <div id="following">
-		    <div id="following_images">
-			    <img class="following_images_padding" src="/image/stock_profile.jpg">
-			    <img class="following_images_padding" src="/image/stock_profile.jpg">
-			    <img class="following_images_padding" src="/image/stock_profile.jpg">
-			    <img class="following_images_padding" src="/image/stock_profile.jpg">
-			    <img class="following_images_padding" src="/image/stock_profile.jpg">
-			    <img class="following_images_padding" src="/image/stock_profile.jpg">
-                <img class="following_images_padding" src="/image/stock_profile.jpg">
-			    <img class="following_images_padding" src="/image/stock_profile.jpg">
-			    <img class="following_images_padding" src="/image/stock_profile.jpg">
-	    	</div>
+	        <div id="user_info">
+                <div id="user_info_list">
+                    <% if session[:id] %>
+                        <ul>
+                            <li> <%= current_user.uname %></li>
+                            <li> <%= current_user.fname.capitalize %></li>
+                            <li><i class="fa fa-map-marker"></i>  <%= current_user.location%></li>
+	    		        </ul>
+                    <% else %>    
+                    <ul>
+				        <li>  Username :</li>
+				        <li>  Name :</li>
+                        <li><i class="fa fa-map-marker"></i></i>  Location :</li>
+                    </ul>
+                    <% end %>
+	    	    </div>
+	        </div>
+	        <div id="following">
+                <div id="following_images">
+                    <% if session[:id] %>
+                        <%  @users=current_user.followers%>
+                        <%  @users.each do |user| %>
+                            <a href="/profile_others?id=<%= user.id %>"> <img class="following_images_padding" src="/image/stock_profile.jpg"></a> 
+                        <%  end %>
+                    <% else %>
+			            <img class="following_images_padding" src="/image/stock_profile.jpg">
+			            <img class="following_images_padding" src="/image/stock_profile.jpg">
+			            <img class="following_images_padding" src="/image/stock_profile.jpg">
+			            <img class="following_images_padding" src="/image/stock_profile.jpg">
+			            <img class="following_images_padding" src="/image/stock_profile.jpg">
+			            <img class="following_images_padding" src="/image/stock_profile.jpg">
+                        <img class="following_images_padding" src="/image/stock_profile.jpg">
+			            <img class="following_images_padding" src="/image/stock_profile.jpg">
+			            <img class="following_images_padding" src="/image/stock_profile.jpg">
+                    <% end %>
+	    	    </div>
+            </div>
         </div>
-    </div>
-        <div id="content">
-             
+        <div id="content">     
             <div id=nav_icon>
                 <i id="icon" class="fa fa-chevron-circle-down fa-2x"></i>
             </div>
             <div id="navbar">
 			    <ul>
-                    <li><div class="menu"><a href="/signup">Profile</a></div></li>
-                    <li><div class="menu"><a href="/feed">Feed</a></div></li>
+                    <li><div class="menu"><a href="/profile">Profile</a></div></li>
+                    <li><div class="menu"><a href="/mini_feed">Feed</a></div></li>
                     <li><div class="menu"><a href="/edit">Account Info</a></div></li>
                     <li><div class="menu"><a href="/post">Post</a></div></li>
                 </ul>
             </div>
-            <%= yield %>
-    </div>
+                <%= yield %>
+        </div>
     <footer>
 	    <div id="footer_about">
 		    <ul>
@@ -99,13 +113,13 @@
             <p> Copyright &copy; 2015 Victor Tsay & John Paul Tambini. All rights reserved </p>
 	    </div>
     </footer>
-    
+    </div>
     <script> 
         $(document).ready(function(){
              var turn=0
             $("#icon").click(function(){
                 if (turn==0){
-                    $("#navbar").animate({height: '300px', opacity: '.6'}, "slow");
+                    $("#navbar").animate({height: '300px', opacity: '.9'}, "slow");
                         turn=1
                 }else{
                     $("#navbar").animate({height: '0', opacity: '0'}, "slow");

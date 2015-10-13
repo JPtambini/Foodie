@@ -16,13 +16,25 @@ GEM
       tzinfo (~> 1.1)
     arel (6.0.3)
     builder (3.2.2)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.7)
+      climate_control (>= 0.0.3, < 1.0)
     excon (0.45.4)
     i18n (0.7.0)
     json (1.8.3)
     mandrill-api (1.0.53)
       excon (>= 0.16.0, < 1.0)
       json (>= 1.7.7, < 2.0)
+    mime-types (2.6.2)
+    mimemagic (0.3.0)
     minitest (5.8.1)
+    paperclip (4.3.1)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      cocaine (~> 0.5.5)
+      mime-types
+      mimemagic (= 0.3.0)
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
@@ -46,6 +58,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord
   mandrill-api
+  paperclip (~> 4.2)
   rake
   sinatra
   sinatra-activerecord

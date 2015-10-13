@@ -1,37 +1,29 @@
-<h1 id="post_h1">Header if needed</h1>
-<div id="post_form">
-	<form id ="post_form" method="POST" action="/post_feed">
-			<br>
-			<br>
-		<div id="form_input">
-			<div>
-				<input class="sign_field" type="text" name="enter_name" placeholder="Enter Name">
-				<br>
-				<br>
-				<input class="sign_field" type="text" name="topic_subject" placeholder="Topic">
-			</div>
-			<br>
-			<textarea type="text" name="text_body" rows="20" cols="80" placeholder="Please Enter comments or posts here. THANK YOU!!!"></textarea>
-		</div>
-		<br>
-		<br>
-		<button>Submit</button>
-	</form>
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-	</p>
+<div id="post">
 
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-	</p>
+    <div>
+        <h1 id="post_h1">Posts</h1>
+    </div
+    >
+    <div id="old_posts">
+        <%@post=Post.where(user_id: current_user.id)%>
+        <% @post.reverse.each do |post| %>
+            <h5><%=post.subject%><h5>
+            <h6><%=post.date_time%></h6>
+            <p><%=post.body%></p>   
+        <%end %>
+    </div>
+    
+    <form id ="post_form" method="POST" action="/post_feed">
+        <div id="post_form_field">
+            <input id="post_field" type="text" name="topic_subject" placeholder="Topic">
+        </div>
+        <div id="post_text">
+            <textarea type="text" name="text_body" rows="15" cols="80" placeholder="Please Enter comments or posts here. THANK YOU!!!">
+            </textarea>
+        </div>
+        <div id="post_submit">
+        <button>Submit</button>
+        </div>
+    </form>
 </div>
+
