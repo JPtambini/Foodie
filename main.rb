@@ -4,7 +4,7 @@ require './models'
 
 enable :sessions
 
-set :database, "sqlite3:foodie_base.sqlite3"
+#set :database, "sqlite3:foodie_base.sqlite3"
 
 configure( :development){set :database, "sqlite3:foodie_basa.sqlite3i"}
 
